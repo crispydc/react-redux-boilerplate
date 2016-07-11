@@ -5,7 +5,7 @@ const initialState = {
   inAsync: false
 }
 
-export default function counter(state = initialState, action) {
+export default function counter(state = initialState, action = {}) {
   switch (action.type) {
     case INCREMENT:
       return Object.assign({}, state, {count: state.count + 1});
