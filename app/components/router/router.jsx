@@ -38,9 +38,6 @@ export class AppRouter extends Component {
       this.props.dispatch(clearError()); //remove the error now that it's been handled
     }
 
-    console.log('CHANGE PAGE');//xxx
-    console.log(this.props.currentPage);//xxx
-
     //determine what we should be showing
     switch(this.props.currentPage) {
       case PageTypes.HOME:

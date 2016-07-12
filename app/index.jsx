@@ -10,13 +10,15 @@ import thunkMiddleware from 'redux-thunk';
 import App from './components/app';
 import RouterReducer from './reducers/router-reducer';
 import ErrorReducer from './reducers/error-reducer';
+import AppReducer from './reducers/app-reducer';
 
 import AppRouter from './components/router/router';
 
 //combine reducers
 const appReducers = combineReducers({
   router: RouterReducer,
-  error: ErrorReducer
+  error: ErrorReducer,
+  app: AppReducer
 });
 
 //create redux logger
