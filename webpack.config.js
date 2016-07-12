@@ -1,6 +1,7 @@
 require('babel-polyfill'); //for Object.assign support
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 //get NPM target
 const TARGET = process.env.npm_lifecycle_event;
@@ -15,22 +16,22 @@ const PATHS = {
   hotStatic: '/static/'
 };
 
+//flag to determine dev or prod build status
+const isDevBuild = (TARGET === 'start' || !TARGET);
+
+//decide whether to use the react-hot loader or not
+const jsxLoaders = isDevBuild ? ['react-hot', 'babel?cacheDirectory=babel-cache'] : ['babel?cacheDirectory=babel-cache'];
+
 const common = {
-  // Entry accepts a path or an object of entries. We'll be using the
-  // latter form given it's convenient with more complex configurations.
-  entry: [
-    'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-    PATHS.app
-  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  output: {
-    path: PATHS.build,
-    filename: 'bundle.js',
-    publicPath: '/static/'
-  },
+  plugins: [
+   new ExtractTextPlugin('./appstyles.css', {
+     allChunks: true,
+     disable: isDevBuild
+   })
+  ],
   module: {
     preLoaders: [
       {
@@ -41,16 +42,16 @@ const common = {
     ],
     loaders: [
       {
-        test: /\.css$/,
-        loaders: ['style', 'css'],
-        include: PATHS.app
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader','sass-loader'])
       },
       {
         // Set up jsx. This accepts js too thanks to RegExp
         test: /\.jsx?$/,
 
         // Enable caching for improved performance during development
-        loaders: ['react-hot', 'babel?cacheDirectory'],
+        loaders: jsxLoaders,
+        exclude: /(node_modules)/,
         include: PATHS.app
       }
     ]
@@ -60,8 +61,19 @@ const common = {
 // Default configuration. We will return this if
 // Webpack is called outside of npm.
 //DEVELOPMENT
-if(TARGET === 'start' || !TARGET) {
+if(isDevBuild) {
+  common.plugins.push(new webpack.HotModuleReplacementPlugin());
   module.exports = Object.assign(common, {
+    entry: [
+      'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
+      'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+      PATHS.app
+    ],
+    output: {
+      path: PATHS.build,
+      filename: 'bundle.js',
+      publicPath: '/static/'
+    },
     devtool: 'eval-source-map',
     devServer: {
       contentBase: PATHS.build,
@@ -80,15 +92,20 @@ if(TARGET === 'start' || !TARGET) {
       // Parse host and port from env so this is easy to customize.
       host: process.env.HOST,
       port: process.env.PORT
-    },
-    plugins: [
-      new webpack.HotModuleReplacementPlugin()
-    ]
+    }
   });
 }
 
 //Running build target
 //PRODUCTION
 if(TARGET === 'build') {
-  module.exports = Object.assign(common, {});
+  module.exports = Object.assign(common, {
+    entry: [
+      PATHS.app
+    ],
+    output: {
+      path: PATHS.build,
+      filename: 'bundle.js'
+    }
+  });
 }
