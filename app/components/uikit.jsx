@@ -118,6 +118,172 @@ export default class Uikit extends Component {
 					</select>
 				</form>
 			</div>
+			<div className="usa-width-one-whole add-hmargin">
+				<h4>Checkboxes</h4>
+				<fieldset className="usa-fieldset-inputs usa-sans">
+					<legend className="usa-sr-only">Historical figures 1</legend>
+					<ul className="usa-unstyled-list">
+						<li>
+							<input id="truth" type="checkbox" name="historical-figures-1" value="truth" checked />
+							<label htmlFor="truth">Sojourner Truth</label>
+						</li>
+						<li>
+							<input id="douglass" type="checkbox" name="historical-figures-1" value="douglass" />
+							<label htmlFor="douglass">Frederick Douglass</label>
+						</li>
+						<li>
+							<input id="washington" type="checkbox" name="historical-figures-1" value="washington" />
+							<label htmlFor="washington">Booker T. Washington</label>
+						</li>
+						<li>
+							<input id="carver" type="checkbox" name="historical-figures-1" disabled />
+							<label htmlFor="carver">George Washington Carver</label>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+			<div className="usa-width-one-whole add-hmargin">
+				<h4>Radio Buttons</h4>
+				<fieldset className="usa-fieldset-inputs usa-sans">
+					<legend className="usa-sr-only">Historical figures 2</legend>
+					<ul className="usa-unstyled-list">
+						<li>
+							<input id="stanton" type="radio" name="historical-figures-2" value="stanton" />
+							<label htmlFor="stanton">Elizabeth Cady Stanton</label>
+						</li>
+						<li>
+							<input id="anthony" type="radio" name="historical-figures-2" value="anthony" />
+							<label htmlFor="anthony">Susan B. Anthony</label>
+						</li>
+						<li>
+							<input id="tubman" type="radio" name="historical-figures-2" value="tubman" />
+							<label htmlFor="tubman">Harriet Tubman</label>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+			<div className="usa-width-one-whole add-hmargin">
+				<fieldset>
+					<legend>Date of birth</legend>
+					<span className="usa-form-hint" id="dobHint">For example: 04 28 1986</span>
+					<div className="usa-date-of-birth">
+						<div className="usa-form-group usa-form-group-month">
+							<label htmlFor="date_of_birth_1">Month</label>
+							<input className="usa-input-inline" aria-describedby="dobHint" id="date_of_birth_1" name="date_of_birth_1" pattern="0?[1-9]|1[012]" type="number" min="1" max="12" value="" />
+						</div>
+						<div className="usa-form-group usa-form-group-day">
+							<label htmlFor="date_of_birth_2">Day</label>
+							<input className="usa-input-inline" aria-describedby="dobHint" id="date_of_birth_2" name="date_of_birth_2" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="number" min="1" max="31" value="" />
+						</div>
+						<div className="usa-form-group usa-form-group-year">
+							<label htmlFor="date_of_birth_3">Year</label>
+							<input className="usa-input-inline" aria-describedby="dobHint" id="date_of_birth_3" name="date_of_birth_3" pattern="[0-9]{4}" type="number" min="1900" max="2000" value="" />
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div className="usa-width-one-whole add-hmargin">
+				<h3>Info Gathering Forms</h3>
+				<form className="usa-form wrap-border wrap-padding">
+					<fieldset>
+						<legend>Name</legend>
+						<label for="title">Title</label>
+						<input className="usa-input-tiny" id="title" name="title" type="text" />
+
+						<label for="first-name">First name <span className="usa-additional_text">Required</span></label>
+						<input id="first-name" name="first-name" type="text" required="" aria-required="true" />
+
+						<label for="middle-name">Middle name</label>
+						<input id="middle-name" name="middle-name" type="text" />
+
+						<label for="last-name">Last name <span className="usa-additional_text">Required</span></label>
+						<input id="last-name" name="last-name" type="text" required="" aria-required="true" />
+
+						<label for="suffix">Suffix</label>
+						<input className="usa-input-tiny" id="suffix" name="suffix" type="text" />
+					</fieldset>
+				</form>
+			</div>
+			<div className="usa-width-one-whole add-hmargin">
+				<form className="usa-form-large wrap-border wrap-padding">
+					<fieldset>
+						<legend>Mailing address</legend>
+						<label htmlFor="mailing-address-1">Street address 1</label>
+						<input id="mailing-address-1" name="mailing-address-1" type="text" />
+
+						<label htmlFor="mailing-address-2">Street address 2 <span className="usa-additional_text">Optional</span></label>
+						<input id="mailing-address-2" name="mailing-address-2" type="text" />
+
+						<div>
+							<div className="usa-input-grid usa-input-grid-medium">
+								<label htmlFor="city">City</label>
+								<input id="city" name="city" type="text" />
+							</div>
+
+							<div className="usa-input-grid usa-input-grid-small">
+								<label htmlFor="state">State</label>
+								<select id="state" name="state">
+									<option value=""></option>
+									<option value="AL">Alabama</option>
+									<option value="AK">Alaska</option>
+									<option value="AZ">Arizona</option>
+									<option value="AR">Arkansas</option>
+									<option value="CA">California</option>
+									<option value="CO">Colorado</option>
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="DC">District of Columbia</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="HI">Hawaii</option>
+									<option value="ID">Idaho</option>
+									<option value="IL">Illinois</option>
+									<option value="IN">Indiana</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NV">Nevada</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NM">New Mexico</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="ND">North Dakota</option>
+									<option value="OH">Ohio</option>
+									<option value="OK">Oklahoma</option>
+									<option value="OR">Oregon</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="SD">South Dakota</option>
+									<option value="TN">Tennessee</option>
+									<option value="TX">Texas</option>
+									<option value="UT">Utah</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WA">Washington</option>
+									<option value="WV">West Virginia</option>
+									<option value="WI">Wisconsin</option>
+									<option value="WY">Wyoming</option>
+								</select>
+							</div>
+						</div>
+
+						<label htmlFor="zip">ZIP</label>
+						<input className="usa-input-medium" id="zip" name="zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace="" />
+					</fieldset>
+				</form>
+			</div>
 		</div>
 		);
 	}
