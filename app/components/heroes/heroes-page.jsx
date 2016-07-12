@@ -1,6 +1,6 @@
 import React, { Component/*, PropTypes */} from 'react'
 import {connect} from 'react-redux';
-import {fetchHeroes} from '../../actions/app-actions';
+import {fetchHeroes, postHeroData} from '../../actions/app-actions';
 
 class HeroesPage extends Component {
   fetchData() {
@@ -8,17 +8,27 @@ class HeroesPage extends Component {
     this.props.dispatch(fetchHeroes());
   }
 
+  postData() {
+    console.log('posting!');
+    this.props.dispatch(postHeroData({
+      name: 'testName',
+      age: '32',
+      height: 50
+    }));
+  }
+
   render() {
     return (
       <div>
         <h1>Welcome!</h1>
-        <button onClick={this.fetchData.bind(this)}>Fetch real data</button>
+        <button onClick={this.fetchData.bind(this)}>Fetch hero data</button>
+        <button onClick={this.postData.bind(this)}>Add a new hero</button>
         <h3>Results:</h3>
         <div>
           {this.props.heroes.length > 0 ?
               this.props.heroes.map((hero) => {
                 return (
-                  <div className="heroBlock">
+                  <div className="heroBlock" key={hero.name}>
                     <h3>{hero.name}</h3>
                     <p>Age: {hero.age}; Height: {hero.height}</p>
                     <p>Resource URL: {hero.url}</p>
