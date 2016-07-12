@@ -13,6 +13,13 @@ body, html {
   margin:0;
   padding:0;
 }
+a{
+
+}
+:fullscreen a {
+    display: flex
+}
+
 #app{
 	padding:$page_topmargin $page_rightmargin $page_bottommargin $page_leftmargin;
 }
@@ -30,6 +37,16 @@ nav {
 				content:"";
 				margin:0;
 				padding:0;
+			}
+			a.mainNavLink{
+				text-decoration: none;
+				&:visited{
+					color:inherit;
+				}
+				&.activeLink{
+					border-bottom:3px solid $global_darkblue;
+					border-top:3px solid $global_darkblue;
+				}
 			}
 		}
 	}
