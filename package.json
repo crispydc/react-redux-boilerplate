@@ -9,7 +9,7 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "test": "jest --coverage",
-    "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
+    "lint": "eslint . --ext .js --ext .jsx --cache"
   },
   "jest": {
     "unmockedModulePathPatterns": [
