@@ -6,6 +6,7 @@ import thunkMiddleware from 'redux-thunk';
 import CounterReducer from '../reducers/counter-reducer';import AppReducer from '../reducers/app-reducer';
 import ErrorReducer from '../reducers/error-reducer';
 import {Link} from 'react-router';
+import {configureApp} from '../actions/app-actions';
 
 //combine reducers
 const appReducers = combineReducers({
@@ -22,6 +23,9 @@ const store = createStore(appReducers, compose(
   applyMiddleware(thunkMiddleware, loggerMiddleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
+
+//get the app config
+store.dispatch(configureApp());
 
 export default class App extends Component {
   render() {
