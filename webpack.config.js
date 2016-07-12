@@ -99,6 +99,16 @@ if(isDevBuild) {
 //Running build target
 //PRODUCTION
 if(TARGET === 'build') {
+
+  //set production environment
+  common.plugins.push(new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify('production')
+  }));
+
+  //optimization plugins
+  common.plugins.push(new webpack.optimize.UglifyJsPlugin());
+  common.plugins.push(new webpack.optimize.DedupePlugin());
+
   module.exports = Object.assign(common, {
     entry: [
       PATHS.app
