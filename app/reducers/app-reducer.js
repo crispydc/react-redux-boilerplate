@@ -1,4 +1,4 @@
-import {RECEIVE_HEROES} from '../actions/app-actions';
+import {RECEIVE_HEROES, RECEIVE_CREATE_SUCCESS} from '../actions/app-actions';
 
 const initialState = {
   heroes: {},
@@ -11,6 +11,12 @@ export default function NetworkReducer (state = initialState, action = {}) {
     case RECEIVE_HEROES:
       return Object.assign({}, state, {
         heroes: action.heroes
+      });
+
+    case RECEIVE_CREATE_SUCCESS:
+      return Object.assign({}, state, {
+        // heroes: action.heroes
+        //TODO: update the hero that was added
       });
 
     default:
