@@ -2,7 +2,7 @@ import React, { Component/*, PropTypes */} from 'react'
 import {connect} from 'react-redux';
 import {fetchHeroes} from '../../actions/app-actions';
 
-class HomePage extends Component {
+class HeroesPage extends Component {
   fetchData() {
     console.log('fetching!');
     this.props.dispatch(fetchHeroes());
@@ -25,7 +25,7 @@ class HomePage extends Component {
   }
 }
 
-// HomePage.propTypes = {
+// HeroesPage.propTypes = {
 //
 // }
 
@@ -35,4 +35,4 @@ export const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps)(HeroesPage);
