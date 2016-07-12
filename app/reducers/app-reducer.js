@@ -1,7 +1,7 @@
 import {RECEIVE_HEROES, RECEIVE_CREATE_SUCCESS} from '../actions/app-actions';
 
 const initialState = {
-  heroes: {},
+  heroes: [],
   lastUpdated: 0
 };
 
