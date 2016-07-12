@@ -1,5 +1,12 @@
-//overall page structure will go here.
+//base styles imported from WSWDS
+@import 'css/uswds.min.css';
+
+//site vars
 @import "vars";
+//utils
+@import "utils";
+
+//overall page structure
 body, html {
   width:100%;
   height:100%;
