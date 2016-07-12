@@ -8,12 +8,15 @@ import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 
 import App from './components/app';
-import Counter from './components/counter/counter';
-import CounterReducer from './reducers/counter-reducer';
+import RouterReducer from './reducers/router-reducer';
+import ErrorReducer from './reducers/error-reducer';
+
+import AppRouter from './components/router/router';
 
 //combine reducers
 const appReducers = combineReducers({
-  counter: CounterReducer
+  router: RouterReducer,
+  error: ErrorReducer
 });
 
 //create redux logger
@@ -27,7 +30,7 @@ ReactDOM.render(
   <div>
     <App />
     <Provider store={store}>
-      <Counter />
+      <AppRouter />
     </Provider>
   </div>,
   document.getElementById('app')
