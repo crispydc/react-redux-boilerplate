@@ -26,7 +26,7 @@ export function fetchHeroes() {
     dispatch(getHeroes());
 
     //return promise that will be evaluated when complete
-    return fetch('http://10.5.56.133:8080/echo_services.json?param=anything', {
+    return fetch('http://54.234.158.11/heros.json', {
       method: 'GET'
     })
     .then((response) => response.text())

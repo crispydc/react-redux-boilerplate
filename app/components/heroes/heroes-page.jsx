@@ -15,9 +15,17 @@ class HeroesPage extends Component {
         <button onClick={this.fetchData.bind(this)}>Fetch real data</button>
         <h3>Results:</h3>
         <div>
-          <ul>
-            {this.props.heroes.param}
-          </ul>
+          {this.props.heroes.length > 0 ?
+              this.props.heroes.map((hero) => {
+                return (
+                  <div className="heroBlock">
+                    <h3>{hero.name}</h3>
+                    <p>Age: {hero.age}; Height: {hero.height}</p>
+                    <p>Resource URL: {hero.url}</p>
+                  </div>
+                )
+              })
+          : <p>no results yet!</p>}
         </div>
       </div>
 
