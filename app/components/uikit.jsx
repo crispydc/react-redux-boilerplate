@@ -7,6 +7,7 @@ export default class Uikit extends Component {
 	return (
 		<div className="uikit usa-grid">
 			<h2>H2 Header: UI Kit</h2>
+			<img src="/static-assets/fpo.jpg" />
 			<p><b>This is the paragraph style.</b> Icing donut cupcake. Gingerbread biscuit jelly gummi bears. Lemon drops tootsie roll lemon drops chocolate marshmallow candy canes. Tiramisu chocolate pudding jelly. Tootsie roll jelly-o tootsie roll soufflé muffin tootsie roll sweet sugar plum. Candy caramels tart chocolate cake icing. Donut chocolate cake donut wafer marzipan sweet cotton candy toffee. Croissant oat cake ice cream. Cheesecake jelly-o pie topping cake donut muffin. Oat cake topping gingerbread cheesecake jelly-o lemon drops. Jelly-o sweet roll wafer biscuit donut toffee topping candy. Tootsie roll cotton candy cake liquorice lollipop topping jelly-o gummies.</p>
 			<div className="usa-width-one-whole add-hmargin">
 				<h3>H3 Header: Buttons</h3>
