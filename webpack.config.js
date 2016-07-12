@@ -53,6 +53,14 @@ const common = {
         loaders: jsxLoaders,
         exclude: /(node_modules)/,
         include: PATHS.app
+      },
+      {
+        test: /\.(png|jpg|gif|woff|woff2|eot|ttf)$/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.(mp4|ogg|svg)$/,
+        loader: 'file-loader'
       }
     ]
   }
