@@ -1,22 +1,37 @@
-//overall page structure will go here.
+//base styles imported from WSWDS
+@import 'css/uswds.min.css';
 
-body {
+//site vars
+@import "vars";
+//utils
+@import "utils";
+
+//overall page structure
+body, html {
   width:100%;
   height:100%;
   margin:0;
   padding:0;
 }
-
-nav ul{
-	list-style:none;
-	margin:0;
-	padding:0;
-	li{
-		list-style: none;
-		float:left;
-		margin-right:10px;
-		&:before, &:after{
-			content:"";
+#app{
+	padding:$page_topmargin $page_rightmargin $page_bottommargin $page_leftmargin;
+}
+nav {
+	border:1px dotted $global_outline_color;
+	ul{
+		list-style:none;
+		margin:0 $element_margin;
+		padding:0;
+		li{
+			list-style: none;
+			float:left;
+			margin-right:$element_margin;
+			&:before, &:after{
+				content:"";
+				margin:0;
+				padding:0;
+			}
 		}
 	}
-}
+
+} 
