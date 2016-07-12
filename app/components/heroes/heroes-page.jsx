@@ -16,6 +16,9 @@ class HeroesPage extends Component {
         <h3>Results:</h3>
         <div>
           <ul>
+            {this.props.heroes.map(h => {
+              return <li>{h.name} ({h.age})</li>
+            })}
             {this.props.heroes.param}
           </ul>
         </div>
