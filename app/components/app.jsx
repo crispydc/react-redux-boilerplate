@@ -31,13 +31,13 @@ export default class App extends Component {
           <h1>H1 Header</h1>
             <nav>
               <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/uikit">UI Kit</Link></li>
-                <li><Link to="/heroes">Heroes</Link></li>
-                <li><Link to="/counter">Counter</Link></li>
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/details">Details</Link></li>
-                <li><Link to="/form">Form</Link></li>
+                <li><Link activeClassName="activeLink" to="/">Home</Link></li>
+                <li><Link className="mainNavLink" activeClassName="activeLink" to="/uikit">UI Kit</Link></li>
+                <li><Link className="mainNavLink" activeClassName="activeLink" to="/heroes">Heroes</Link></li>
+                <li><Link className="mainNavLink" activeClassName="activeLink" to="/counter">Counter</Link></li>
+                <li><Link className="mainNavLink" activeClassName="activeLink" to="/login">Login</Link></li>
+                <li><Link className="mainNavLink" activeClassName="activeLink" to="/details">Details</Link></li>
+                <li><Link className="mainNavLink" activeClassName="activeLink" to="/form">Form</Link></li>
               </ul>
             </nav>
           <main>
