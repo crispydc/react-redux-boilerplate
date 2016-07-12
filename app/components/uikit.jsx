@@ -187,19 +187,19 @@ export default class Uikit extends Component {
 				<form className="usa-form wrap-border wrap-padding">
 					<fieldset>
 						<legend>Name</legend>
-						<label for="title">Title</label>
+						<label htmlFor="title">Title</label>
 						<input className="usa-input-tiny" id="title" name="title" type="text" />
 
-						<label for="first-name">First name <span className="usa-additional_text">Required</span></label>
+						<label htmlFor="first-name">First name <span className="usa-additional_text">Required</span></label>
 						<input id="first-name" name="first-name" type="text" required="" aria-required="true" />
 
-						<label for="middle-name">Middle name</label>
+						<label htmlFor="middle-name">Middle name</label>
 						<input id="middle-name" name="middle-name" type="text" />
 
-						<label for="last-name">Last name <span className="usa-additional_text">Required</span></label>
+						<label htmlFor="last-name">Last name <span className="usa-additional_text">Required</span></label>
 						<input id="last-name" name="last-name" type="text" required="" aria-required="true" />
 
-						<label for="suffix">Suffix</label>
+						<label htmlFor="suffix">Suffix</label>
 						<input className="usa-input-tiny" id="suffix" name="suffix" type="text" />
 					</fieldset>
 				</form>
