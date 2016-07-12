@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import {connect} from 'react-redux';
 import {increment, decrement, asyncIncrement} from '../../actions/counter-actions';
 
-class Counter extends Component {
+export class Counter extends Component {
 
   render() {
     const { value, inAsync, onIncrement, onDecrement, onAsyncIncrement } = this.props;
