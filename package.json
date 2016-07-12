@@ -9,8 +9,7 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "test": "jest",
-    "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache",
-    "clean": "rm build/appstyles.css && rm build/bundle.js"
+    "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
   },
   "jest": {
     "unmockedModulePathPatterns": [
@@ -45,6 +44,8 @@
     "redux-thunk": "^2.1.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.6",
+    "file-loader": "^0.8.4",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   },
@@ -52,6 +53,7 @@
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
+    "react-router": "^2.5.2",
     "redux": "^3.5.2"
   }
 }

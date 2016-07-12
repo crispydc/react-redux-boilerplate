@@ -2,33 +2,18 @@ import './sass/app.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
-import {Provider} from 'react-redux';
-import createLogger from 'redux-logger';
-import thunkMiddleware from 'redux-thunk';
+import { Router, Route } from 'react-router';
 
 import App from './components/app';
-import Counter from './components/counter/counter';
-import CounterReducer from './reducers/counter-reducer';
-
-//combine reducers
-const appReducers = combineReducers({
-  counter: CounterReducer
-});
-
-//create redux logger
-const loggerMiddleware = createLogger();
-
-//create store
-const store = createStore(appReducers, applyMiddleware(thunkMiddleware, loggerMiddleware));
+import Uikit from './components/uikit';
 
 //root render
 ReactDOM.render(
-  <div>
-    <App />
-    <Provider store={store}>
-      <Counter />
-    </Provider>
-  </div>,
+<Router>
+	<Route path="/" component={App}>
+		<Route path="uikit" component={Uikit} />
+	</Route>
+</Router>
+  ,
   document.getElementById('app')
 );
