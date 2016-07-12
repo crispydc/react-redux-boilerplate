@@ -28,7 +28,7 @@ class HeroesPage extends Component {
           {this.props.heroes.length > 0 ?
               this.props.heroes.map((hero) => {
                 return (
-                  <div className="heroBlock" key={hero.name}>
+                  <div className="heroBlock" key={hero.id.$oid}>
                     <h3>{hero.name}</h3>
                     <p>Age: {hero.age}; Height: {hero.height}</p>
                     <p>Resource URL: {hero.url}</p>
