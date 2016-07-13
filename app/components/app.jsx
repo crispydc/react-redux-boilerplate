@@ -5,14 +5,16 @@ import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import CounterReducer from '../reducers/counter-reducer';import AppReducer from '../reducers/app-reducer';
 import ErrorReducer from '../reducers/error-reducer';
+import ConfigReducer from '../reducers/config-reducer';
 import {Link} from 'react-router';
-import {configureApp} from '../actions/app-actions';
+import {configureApp} from '../actions/config-actions';
 
 //combine reducers
 const appReducers = combineReducers({
   counter: CounterReducer,
   app: AppReducer,
-  error: ErrorReducer
+  error: ErrorReducer,
+  config: ConfigReducer
 });
 
 //create redux logger

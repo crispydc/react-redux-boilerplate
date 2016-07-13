@@ -5,8 +5,6 @@ export const GET_HEROES = 'GET_HEROES';
 export const RECEIVE_HEROES = 'RECEIVE_HEROES';
 export const POST_HERO = 'POST_HERO';
 export const RECEIVE_CREATE_SUCCESS = 'RECEIVE_CREATE_SUCCESS';
-export const CONFIG_APP = 'CONFIG_APP';
-export const SET_APP_CONFIG = 'SET_APP_CONFIG';
 
 /******************** GET ***********************/
 
@@ -25,7 +23,7 @@ export function receiveHeroes(responseJson) {
 export function fetchHeroes() {
   //use thunk middleware to be able to dispatch other actions from this one
   return (dispatch, getState) => {
-    const endpoint = getState().app.config.endpoint;
+    const endpoint = getState().config.settings.endpoint;
 
     //update state to mark fetch start
     dispatch(getHeroes());
@@ -64,7 +62,7 @@ export function postHeroData(data) {
   return (dispatch, getState) => {
 
     //get endpoint
-    const endpoint = getState().app.config.endpoint;
+    const endpoint = getState().config.settings.endpoint;
 
     //update state to mark fetch start
     dispatch(postHero());
@@ -85,22 +83,6 @@ export function postHeroData(data) {
       console.log('post success!');
 
       dispatch(receivePostSuccess(responseJson));
-      return responseJson;
-    });
-  }
-}
-
-export function setAppConfig(config) {
-  return {type: SET_APP_CONFIG, config}
-}
-
-export function configureApp() {
-  return dispatch => {
-    return fetch('/config.json')
-    .then((response) => response.text())
-    .then((responseText) => JSON.parse(responseText))
-    .then((responseJson) => {
-      dispatch(setAppConfig(responseJson));
       return responseJson;
     });
   }
